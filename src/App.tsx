@@ -1,18 +1,5 @@
 import React from "react";
-import { CesiumWidget, Ion } from "@cesium/engine";
-import "@cesium/engine/Source/Widget/CesiumWidget.css";
-
-declare global {
-  interface Window {
-    CESIUM_BASE_URL: string;
-  }
-}
-
-window.CESIUM_BASE_URL = import.meta.env.PROD
-  ? "/cesium/"
-  : "/node_modules/@cesium/engine/Build/";
-
-Ion.defaultAccessToken = "YOUR_OWN_TOKEN";
+import { CesiumWidget } from "@cesium/engine";
 
 const App: React.FC = () => {
   const viewerRef = React.useRef<HTMLDivElement>(null);
